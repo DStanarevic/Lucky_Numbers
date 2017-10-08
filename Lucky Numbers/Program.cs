@@ -21,7 +21,7 @@ namespace Lucky_Numbers
 
 
             //Main Program
-            Console.WriteLine("Would you like to play a game of Lucky Numbers? With this game you have a \nchance of winning 10,000,000. Proceed: Yes or no?");
+            Console.WriteLine("Would you like to play a game of Lucky Numbers? With this game you have a \nchance of winning 10,000,000 dollars. Proceed: Yes or no?");
             string playAgain = Console.ReadLine();
             while (playAgain.ToLower() == "yes")
             {
@@ -36,7 +36,8 @@ namespace Lucky_Numbers
                 for (int i = 0; i < randomNumbers.Length; i++)
                 {
                     randomNumbers[i] = rando.Next(lowestNumber, highestNumber);
-                    if (randomNumbers.Contains(randomNumbers[i]))
+                    //For the stretch task I re-rolled if the random numbers array contained the currently indexed number.
+                    if(randomNumbers.Contains(randomNumbers[i]))
                     {
                         randomNumbers[i] = rando.Next(lowestNumber, highestNumber);
                     }
@@ -84,7 +85,7 @@ namespace Lucky_Numbers
                 Console.WriteLine("You won $" + Math.Round(winnings,2).ToString("#,##0.00") + "!");
                
                 //Closing Statement
-                Console.WriteLine("Would you like to play Lucky Numbers again ?");
+                Console.WriteLine("Would you like to play Lucky Numbers again?");
                 playAgain = Console.ReadLine();
 
             }
